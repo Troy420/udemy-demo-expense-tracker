@@ -7,14 +7,13 @@ import ExpensesFilter from "./ExpensesFilter";
 const Expenses = (props) => {
   const [year, setYear] = useState("2020");
 
-  const saveFilterYear = (year) => {
-    console.log(year);
-    setYear(year);
+  const saveFilterYear = (yearChangeHandler) => {
+    setYear(yearChangeHandler);
   };
 
   return (
     <Card className="expenses">
-      <ExpensesFilter onSaveFilterYear={saveFilterYear} selected={year} />
+      <ExpensesFilter onSaveFilterYear={saveFilterYear} defaultYear={year} />
       <ExpenseItem
         title={props.expensesData[0].title}
         amount={props.expensesData[0].amount}
