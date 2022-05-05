@@ -3,6 +3,7 @@ import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
+  console.log(props);
   const [buttonClicked, setButtonClicked] = useState("false");
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
